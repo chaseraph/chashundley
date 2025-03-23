@@ -109,7 +109,23 @@
     
   }
   /* Force logo grid into single-column on small screens */
-@media (max-width: 600px) {
+/* Default logo styling for desktop */
+.grid img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  /* Mobile-specific override */
+  @media (max-width: 600px) {
     .grid {
       grid-template-columns: 1fr !important;
       justify-items: center;
@@ -117,7 +133,7 @@
   
     .grid img {
       max-width: 80%;
-      margin: 0 auto;
     }
   }
+  
   
