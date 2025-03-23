@@ -106,5 +106,18 @@
   #theme-toggle:hover {
     background-color: var(--link);
     color: white;
+    
+  }
+  /* Force logo grid into single-column on small screens */
+@media (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr !important;
+      justify-items: center;
+    }
+  
+    .grid img {
+      max-width: 80%;
+      margin: 0 auto;
+    }
   }
   
