@@ -1,0 +1,110 @@
+:root {
+    --base03: #002b36;
+    --base02: #073642;
+    --base01: #586e75;
+    --base00: #657b83;
+    --base0:  #839496;
+    --base1:  #93a1a1;
+    --base2:  #eee8d5;
+    --base3:  #fdf6e3;
+    --accent: #268bd2;
+  }
+  
+  /* Light Theme */
+  [data-theme="light"] {
+    --bg: var(--base3);
+    --text: var(--base00);
+    --link: var(--accent);
+  }
+  
+  /* Dark Theme */
+  [data-theme="dark"] {
+    --bg: var(--base03);
+    --text: var(--base0);
+    --link: var(--accent);
+  }
+  
+  body {
+    margin: 0;
+    padding: 2rem;
+    font-family: system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  h1 {
+    margin-bottom: 0.25em;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .grid a {
+    background-color: var(--base2);
+    color: var(--text);
+    text-decoration: none;
+    border: 2px solid var(--base1);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s;
+  }
+  
+  [data-theme="dark"] .grid a {
+    background-color: var(--base02);
+    border-color: var(--base01);
+  }
+  
+  .grid a:hover {
+    transform: scale(1.03);
+    background-color: var(--link);
+    color: white;
+  }
+  
+  #bluesky-feed .post {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--base1);
+  }
+  
+  iframe {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 1rem auto;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    color: var(--base01);
+  }
+  
+  #theme-toggle {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: none;
+    color: var(--text);
+    border: 2px solid var(--text);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #theme-toggle:hover {
+    background-color: var(--link);
+    color: white;
+  }
+  
