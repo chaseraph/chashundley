@@ -15,15 +15,14 @@
   [data-theme="light"] {
     --bg: var(--base3);
     --text: var(--base00);
-    --link: var(--accent);
+    --link: var(--accent-strong); /* ✅ use violet */
   }
   
-  /* Dark Theme */
   [data-theme="dark"] {
     --bg: var(--base03);
     --text: var(--base0);
-    --link: var(--accent);
-  }
+    --link: var(--accent-strong); /* ✅ use violet */
+  }  
   
   body {
     margin: 0;
