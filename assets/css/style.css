@@ -148,4 +148,20 @@
   a:hover {
     color: #b58900; /* Solarized yellow */
   }
+  #about {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  
+  #about h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-text p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
   
