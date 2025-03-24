@@ -34,13 +34,26 @@ async function loadBluesky() {
           const post = item.post;
           const text = post?.record?.text || "[no content]";
           let embedHTML = '';
-  
           const embed = post?.embed;
+          
+          // Image support
           if (embed?.$type === 'app.bsky.embed.images' && embed.images?.length > 0) {
             embed.images.forEach(img => {
               embedHTML += `<img src="${img.thumb}" alt="${img.alt || ''}" style="max-width:100%; margin-top:0.5rem;" />`;
             });
           }
+          
+          // External link preview support
+          if (embed?.$type === 'app.bsky.embed.external' && embed.external) {
+            const ext = embed.external;
+            embedHTML += `
+              <div class="bsky-preview" style="border:1px solid #ccc; padding:0.75rem; margin-top:0.5rem; background:#f9f9f9; border-radius:8px;">
+                <a href="${ext.uri}" target="_blank" style="font-weight:bold; color:var(--link); text-decoration:none;">${ext.title}</a>
+                <p style="margin:0.25rem 0 0.5rem;">${ext.description || ''}</p>
+                ${ext.thumb ? `<img src="${ext.thumb}" alt="${ext.title}" style="max-width:100%; border-radius:4px;" />` : ''}
+              </div>
+            `;
+          }          
   
           const div = document.createElement('div');
           div.className = 'post';
