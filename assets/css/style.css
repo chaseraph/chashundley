@@ -52,7 +52,7 @@
   
   .grid a {
     background-color: var(--base2);
-    color: var(--text);
+    color: var(--link);
     text-decoration: none;
     border: 2px solid var(--base1);
     padding: 1rem;
