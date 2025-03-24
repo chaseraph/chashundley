@@ -33,6 +33,7 @@ async function loadBluesky() {
         .forEach(item => {
           const post = item.post;
           const text = post?.record?.text || "[no content]";
+          const linkedText = text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
           let embedHTML = '';
           const embed = post?.embed;
           
@@ -58,7 +59,7 @@ async function loadBluesky() {
           const div = document.createElement('div');
           div.className = 'post';
           div.innerHTML = `
-            <p>${text}</p>
+            <p>${linkedText}</p>
             ${embedHTML}
             <small><a href="https://bsky.app/profile/chashundley.bsky.social/post/${item.post?.cid}" target="_blank">View on Bluesky →</a></small>
           `;
