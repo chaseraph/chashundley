@@ -61,7 +61,7 @@ async function loadBluesky() {
           div.innerHTML = `
             <p>${linkedText}</p>
             ${embedHTML}
-            <small><a href="https://bsky.app/profile/chashundley.bsky.social/post/${item.post?.cid}" target="_blank">View on Bluesky →</a></small>
+<a href="https://bsky.app/profile/chashundley.bsky.social/post/${item.post?.uri.split('/').pop()}"
           `;
           feedEl.appendChild(div);
         });
